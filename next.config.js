@@ -19,7 +19,7 @@ const nextConfig = {
   },
     async rewrites() {
     return [
-      { source: "/api/:path*", destination: "https://fyersbook.netlify.app/:path*" },
+      { source: "/api/:path*", destination: "https://fyerssebi.netlify.app/:path*" },
     ]
   },
 }

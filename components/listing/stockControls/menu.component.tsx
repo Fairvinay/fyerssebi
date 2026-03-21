@@ -248,7 +248,7 @@ const Menu = () => {
            // })
            // dispatch(saveGainers(sortedData))
         } 
-         // https://fyersbook.netlify.app/.netlify/functions/netlifyupstoxbridge/api/upstoxcallback
+         // https://fyerssebi.netlify.app/.netlify/functions/netlifyupstoxbridge/api/upstoxcallback
 
 
 
@@ -329,7 +329,7 @@ const Menu = () => {
            // })
            // dispatch(saveGainers(sortedData))
         } 
-         // https://fyersbook.netlify.app/.netlify/functions/netlifyupstoxbridge/api/upstoxcallback
+         // https://fyerssebi.netlify.app/.netlify/functions/netlifyupstoxbridge/api/upstoxcallback
 
 
 
@@ -418,7 +418,7 @@ const Menu = () => {
            // })
            // dispatch(saveGainers(sortedData))
         } 
-         // https://fyersbook.netlify.app/.netlify/functions/netlifyupstoxbridge/api/upstoxcallback
+         // https://fyerssebi.netlify.app/.netlify/functions/netlifyupstoxbridge/api/upstoxcallback
 
 
 
