@@ -16,6 +16,7 @@ import {Lock, Unlock, ArrowRight, ArrowLeft, Check, X, Heading4 } from "lucide-r
 import { Loader2  } from "lucide-react";
 import { Settings,  TrendingUp, Wallet, Coins } from 'lucide-react';
 import withSpinner from "./withSpinner";
+import { FYERSOPTIONCHAINWSSFEED } from '@/libs/client';
 import {SwipeCallPill , SwipePutPill} from "./SwipePills";
 import { useModal } from '@/providers/ModalProvider';
 import { showModal as modalShow, showError } from '../../../common/service/ModalService';
@@ -1850,7 +1851,7 @@ function OptionRow({  idx ,  row, onAction }) {
 
 export default function OptionChainTable({positionData, activeIndexIn}) {
     const dispatch = useDispatch();
-        const url = 'wss://192.168.1.3:8443/';
+        const url = FYERSOPTIONCHAINWSSFEED; //'wss://192.168.1.3:8443/';
       const [activeIndexCh, setActiveIndexCh] = useState(activeIndexIn);
 
   useEffect(() => {
