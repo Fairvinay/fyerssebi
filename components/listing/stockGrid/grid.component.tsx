@@ -21,6 +21,7 @@ import { savePositionBook } from '@/redux/slices/positionSlice';
 import { savePositionStreamBook } from '@/redux/slices/positionSlice';
 import { CommonConstants } from '@/utils/constants';
 import StockCandleChart from "@/components/charts/StockCandleChart";
+import SubscriptionScreen from "@/components/listing/subscription/SubscriptionScreen";
 import GridCards from '@/app/GridCards';
 import './grid.css';
 
@@ -241,7 +242,9 @@ const StockGrid = () => {
                           
                      ) : tab === "Observe" ? (  
                            <>    </> 
-                     ) :    <>    </> 
+                     ) : tab === "Subscribe"  ? (  
+                             <SubscriptionScreen/>   
+                     ) :  <>    </> 
                 }
 
               

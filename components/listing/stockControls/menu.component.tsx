@@ -17,6 +17,7 @@ const arr = [
     {key: 2, title: "Observe"},
     {key: 3, title: "Trade"},
     {key: 4, title: "Position"},
+     {key: 5, title: "Subscribe"},
 ]
 const sortMapper = [
     {key: 1, title: "Sort by percentage"},
@@ -435,6 +436,7 @@ const Menu = () => {
                 <option value={'Observe'}> Observe</option>
                 <option value={'Trade'}>Trade</option>
                  <option value={'Position'} >Position</option>
+                   <option value={'Subscribe'} >Subscribe</option>
             </select>
 
 
@@ -449,7 +451,7 @@ const Menu = () => {
                     })
                 }
                 <div
-                    className={`hidden md:block toggle-line ${tab === "Observe" ? 'move-line' : tab === 'Top Traders' ? 'move-line2' :  tab === 'Positions' ? 'move-line3' :  tab === 'Most Actively Traded' ? 'move-2next' : ''}`}></div>
+                    className={`hidden md:block toggle-line ${tab === "Educate"  ? 'move-line' : tab === "Observe" ? 'move-line1' :  tab === "Trade" ? 'move-line2' :  tab === 'Position' ? 'move-2next' :  tab === 'Subscribe' ? 'move-line3' : ''}`}></div>
             </div>
            {/* <div className='hidden md:flex flex-wrap items-center justify-between'>
                 {

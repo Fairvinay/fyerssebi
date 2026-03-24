@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Check, X, ShieldCheck, Diamond, Star } from 'lucide-react';
-
+import SubscribeSwipeButton from '../../../app/SubscribeSwipeButton';
+//import VroomSwipeButton from '../../../app/VroomSwipeButton';
 const SubscriptionScreen = () => {
   const features = [
     "Indices Websocket streaming",
@@ -12,34 +13,37 @@ const SubscriptionScreen = () => {
   ];
 
   const plans = [
-    { name: "Basic", price: "Free", checks: [true, true, false, false, false], accent: "#94a3b8" },
-    { name: "Premium", price: "₹999", checks: [true, true, true, true, false], accent: "#fbbf24", popular: true },
-    { name: "AI Advanced", price: "₹2499", checks: [true, true, true, true, true], accent: "#6366f1" }
+    { name: "Basic", price: "Free", checks: [true, true, false, false, false], accent: "#f5a254" },
+    { name: "Premium", price: "₹999", checks: [true, true, true, true, false], accent: "#f00f22", popular: true },
+    { name: "AI Advanced", price: "₹2499", checks: [true, true, true, true, true], accent: "#070ac2" }
   ];
-
+// [#0f172a] 
   return (
-    <div className="min-h-screen bg-[#0f172a] text-slate-200 py-10 px-4">
+    <div className="min-h-screen bg--gray-100 text-slate-200 py-10 px-4">
       <div className="max-w-7xl mx-auto">
         
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-5xl font-extrabold text-white mb-4">Choose Your Edge</h1>
-          <p className="text-slate-400 max-w-2xl mx-auto">Elevate your trading with real-time data and AI-driven insights.</p>
+          {/* <h1 className="text-3xl md:text-5xl font-extrabold rounded-full  bg-blue-600 hover:bg-blue-700 text-white mb-4">Choose Your Edge</h1>*/ } 
+            <SubscribeSwipeButton />
+            {/*<VroomSwipeButton/> */}
+
+          <p className="bg-blue-100 rounded-full text-green-900 max-w-2xl mx-auto">Elevate your trading with real-time data and AI-driven insights.</p>
         </div>
 
         {/* Main Grid: Responsive Stack to 12-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-0">
           
-          {/* Feature Titles (Hidden on small mobile, shown as a side-bar on desktop) */}
-          <div className="hidden lg:block lg:col-span-3 mt-[180px] bg-[#1e293b]/50 rounded-l-2xl border-y border-l border-slate-700">
+          {/* Feature Titles (Hidden on small mobile, shown as a side-bar on desktop)bg-[#1e293b]/50 */}
+          <div className="hidden lg:block lg:col-span-3 mt-[180px] bg-green-500 rounded-l-2xl border-y border-l border-slate-700">
             {features.map((f, i) => (
-              <div key={i} className="h-16 flex items-center px-6 text-sm font-semibold border-b border-slate-700 last:border-0">
+              <div key={i} className="h-16 flex items-center px-6 text-sm  text-yellow-300 text-[24px]  font-semibold border-b border-slate-700 last:border-0">
                 {f}
               </div>
             ))}
           </div>
 
-          {/* Pricing Cards */}
+          {/* Pricing Cards bg-[#1e293b]*/}
           <div className="lg:col-span-9 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-0">
             {plans.map((plan, pIdx) => (
               <motion.div
@@ -47,7 +51,7 @@ const SubscriptionScreen = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: pIdx * 0.1 }}
-                className={`relative flex flex-col bg-[#1e293b] border border-slate-700 p-6 
+                className={`relative flex flex-col bg-blue-400 border border-slate-700 p-6 
                   ${plan.popular ? 'lg:scale-105 lg:z-10 border-amber-500 shadow-2xl shadow-amber-500/10' : ''} 
                   ${pIdx === 0 ? 'lg:rounded-l-none lg:rounded-r-none' : ''}
                   ${pIdx === 2 ? 'lg:rounded-r-2xl' : ''}
@@ -61,15 +65,15 @@ const SubscriptionScreen = () => {
 
                 <div className="text-center mb-8">
                   <h3 className="text-xl font-bold mb-2" style={{ color: plan.accent }}>{plan.name}</h3>
-                  <div className="text-4xl font-black text-white">{plan.price}<span className="text-sm text-slate-400 font-normal">/mo</span></div>
+                  <div className="text-4xl font-black text-white">{plan.price}<span className="text-xl text-blue-900 font-normal">/mo</span></div>
                 </div>
 
                 {/* Mobile Feature List (Only shows on small screens) */}
                 <div className="lg:hidden mb-6">
                   {features.map((f, fIdx) => (
                     <div key={fIdx} className="flex justify-between items-center py-2 border-b border-slate-700/50">
-                      <span className="text-xs text-slate-400">{f}</span>
-                      {plan.checks[fIdx] ? <Check size={16} className="text-green-400" /> : <X size={16} className="text-slate-600" />}
+                      <span className="text-xs text-[23px]  font-bold  text-yellow-300 ">{f}</span>
+                      {plan.checks[fIdx] ? <Check size={16} className="bg-amber-100 rounded-full text-green-400" /> : <X size={16} className="bg-amber-100 rounded-full text-slate-600" />}
                     </div>
                   ))}
                 </div>
@@ -85,7 +89,7 @@ const SubscriptionScreen = () => {
 
                 <button className="mt-8 w-full py-3 rounded-lg font-bold transition-all hover:brightness-110 active:scale-95" 
                         style={{ backgroundColor: plan.accent, color: plan.name === 'Premium' ? '#000' : '#fff' }}>
-                  Upgrade Now
+                 { plan.name==="Basic" ? "Complete KYC" : "Upgrade Now"} 
                 </button>
               </motion.div>
             ))}

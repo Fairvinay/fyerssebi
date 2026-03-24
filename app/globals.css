@@ -13,7 +13,10 @@
   transition: .3s ease-in-out;
 }
 .move-line{
-  left: 120px;
+  left: 20px;
+}
+.move-line1{
+  left: 130px;
 }
 .move-line2{
   left: 235px;
