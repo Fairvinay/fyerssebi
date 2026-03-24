@@ -37,7 +37,7 @@ const SubscriptionScreen = () => {
           {/* Feature Titles (Hidden on small mobile, shown as a side-bar on desktop)bg-[#1e293b]/50 */}
           <div className="hidden lg:block lg:col-span-3 mt-[180px] bg-green-500 rounded-l-2xl border-y border-l border-slate-700">
             {features.map((f, i) => (
-              <div key={i} className="h-16 flex items-center px-6 text-sm  text-yellow-300 text-[24px]  font-semibold border-b border-slate-700 last:border-0">
+              <div key={i} className="h-16 flex items-center px-6  text-yellow-300 text-[24px]  font-semibold border-b border-slate-700 last:border-0">
                 {f}
               </div>
             ))}
